@@ -21,7 +21,6 @@ MHZ19::MHZ19(int rx, int tx)
 {
 	_rx_pin = rx;
 	_tx_pin = tx;
-  _mhz19_serial = HardwareSerial(1);
   // _mhz19_serial = SoftwareSerial(rx, tx);
 	// _mhz19_serial.begin(9600);
 }
