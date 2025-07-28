@@ -12,7 +12,7 @@
 #ifdef ESP32
 #include "HardwareSerial.h"
 #else
-// #include "SoftwareSerial.h"
+#include "SoftwareSerial.h"
 #endif
 
 enum MHZ19_UART_DATA

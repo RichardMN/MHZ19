@@ -15,14 +15,14 @@
 
 MHZ19::MHZ19()
 {
+	EspSoftwareSerial::UART _mhz19_serial();
 }
 
 MHZ19::MHZ19(int rx, int tx)
 {
 	_rx_pin = rx;
 	_tx_pin = tx;
-  // _mhz19_serial = SoftwareSerial(rx, tx);
-	// _mhz19_serial.begin(9600);
+	_mhz19_serial.begin(9600, SWSERIAL_8N1, rx, tx, false);
 }
 
 MHZ19::MHZ19(int pwm){
@@ -31,7 +31,7 @@ MHZ19::MHZ19(int pwm){
 
 void MHZ19::begin() {
 	if(_pwm_pin < 0) {
-		_mhz19_serial.begin(9600, SERIAL_8N1, _rx_pin, _tx_pin);
+		_mhz19_serial.begin(9600, SWSERIAL_8N1, _rx_pin, _tx_pin, false);
 	}
 }
 
