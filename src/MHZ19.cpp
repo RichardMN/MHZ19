@@ -115,7 +115,10 @@ measurement_t MHZ19::getMeasurement()
 	{
 		buf[i] = 0x0;
 	}
-
+	buf[0] = 0xff;
+	buf[1] = 0x01;
+	buf[2] = 0x86;
+	
 	writeCommand(getppm, buf);
 	// parse
 	measurement_t measurement = {};
