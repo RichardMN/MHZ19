@@ -82,6 +82,7 @@ class MHZ19
 	HardwareSerial _mhz19_serial = Serial1;
 #else
 	// SoftwareSerial _mhz19_serial = Serial2;
+	EspSoftwareSerial::UART _mhz19_serial;
 #endif
 	// Serial Pins
 	int _rx_pin = -1;
